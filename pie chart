@@ -1,0 +1,23 @@
+#pie chart
+import numpy as np
+import matplotlib.pyplot as plt
+labels = ['Strawberry','Mango','Rasberry','Guava']
+sizes = [10,20,50,30]
+
+#แบ่งพิซซ่าออกมาให้ชัดๆ
+explode = (0.1,0.1,0.1,0.3)
+
+fig , ax=plt.subplots()
+ax.pie(sizes ,
+        explode = explode,
+      labels=labels,
+      
+      autopct ='%1.1f%%',
+      shadow = True,
+      startangle = 90)
+ax.axis('equal')
+ax.set_title ('The number of Fruits')
+
+#save รูป
+plt.savefig('pie_chart.png')
+plt.show()
